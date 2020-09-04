@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(2.jpg);
+    background-size: cover;
+}
+.container{
+    border-radius: 25px;
+    background-color: #222831;
+    color: black;
+    height: 500px;
+    text-align: center;
+
+}
+.notification{
+    display: none;
+    background-color: rgb(219, 85, 85);
+    height: 35px;
+    font-size: 25px;
+    color: rgb(170, 2, 2);
+    line-height: 1.5;
+}
+.bgrnd{
+    position: relative;
+    height: 100%;
+    border-radius: 25px;
+    background: linear-gradient(90deg, rgba(214,148,51,0.7570378493194152) 0%, rgba(16,50,111,0.9217638691322901) 80%, rgba(16,50,111,0.9217638691322901) 100%), url(5.jpg);
+    background-size: cover;
+    width: 300px;
+    transition: transform 300ms ease;
+    transform: translateZ(0) scale(1.02) perspective(1000px);
+    float: left;
+}
+.bgrnd:hover{
+    transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+.date{
+    font-size: 30px;
+    line-height: 1.2;
+    color: white;
+}
+.date span{
+    font-size: 20px;
+}
+.weather-icon{
+    width: 100%;
+}
+.weather-icon img{
+    transform: scale(1.3);
+}
+.temperature-value{
+    font-size: 50px;
+    color: white;
+    line-height: 1.5;
+}
+.temperature-value p{
+    display: inline;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.temperature-value span{
+    font-size: 30px;
+}
+.temperature-description{
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.location{
+    color: white;
+    font-size: 20px;
+    line-height: 1.5; 
+}
+.location p{
+    display: inline;
+    margin-left: 10px;
+}
+.detail{
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    margin-top: 16px;
+    font-weight: 300;
+    row-gap: 8px;
+    font-size: 35px;
+}
+.value{
+    font-size: 35px;
+    cursor: pointer;
+    display: inline;
+    margin-left: 10px;
+}
+.label{
+    font-size: 15px;
+}
+.detail span{
+    font-size: 20px;
+}
+.wind span{
+    font-size: 10px;
+}
+.wrapper{
+    position: absolute;
+    top: 5px;
+    height: 60px;
+    width: 400px;
+    display : flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper .btn-1{
+    position: absolute;
+    height: 60px;
+    width: 50%;
+    color: white;
+    background: linear-gradient(90deg, rgba(214,148,51,0.7570378493194152) 0%, rgba(16,50,111,0.9217638691322901) 80%, rgba(16,50,111,0.9217638691322901) 100%);
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+#click:checked ~.btn-1{
+    opacity: 0;
+    height: 40px;
+    width: 100px;
+    pointer-events: none;
+}
+
+.wrapper .searchBx{
+    height: 100%;
+    width: 0%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.wrapper #click{
+    display: none;
+}
+#click:checked ~ .searchBx{
+    opacity: 1;
+    pointer-events: auto;
+    width: 100%;
+}
+.wrapper .searchBx input{
+    height: 100%;
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 0 130px 0 15;
+    font-size: 20px;
+    outline: none;
+}
+.wrapper .searchBx .button{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(16,43,72,1) 0%, rgba(22,56,117,1) 100%);
+    border-radius: 5px;
+    line-height: 40px;
+    cursor: pointer;
+}
+@media (max-width: 289px){
+    .container{
+        margin-top: 120px;
+    }
+    .wrapper .searchBx input{
+        width: 69%;
+    }
+    .wrapper .searchBx .button{
+        right: 65px;
+    }
+    .bgrnd:hover{
+        transform: scale(1) perspective(1500px);
+    }
+}
+@media (max-width: 320px) and (min-width: 290px){
+    .container{
+        margin-top: 120px;
+    }
+    .wrapper .searchBx input{
+        width: 79%;
+    }
+    .wrapper .searchBx .button{
+        right: 45px;
+    }
+    .bgrnd:hover{
+        transform: scale(1) perspective(1500px);
+    }
+}
+@media (max-width: 420px) and (min-width: 321px){
+    .container{
+        margin-top: 10px;
+    }
+    .wrapper .searchBx input{
+        width: 89%;
+    }
+    .wrapper .searchBx .button{
+        right: 25px;
+    }
+}
